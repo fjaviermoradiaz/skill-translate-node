@@ -1,0 +1,41 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "hola traductor",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "TranslateIntent",
+                    "slots": [
+                        {
+                            "name": "toTranslate",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "traduce la palabra {toTranslate}",
+                        "traduce la frase {toTranslate}",
+                        "traduceme {toTranslate}",
+                        "traduce {toTranslate}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                }
+            ],
+            "types": []
+        }
+    }
+}
