@@ -32,13 +32,9 @@ const LaunchRequestHandler = {
     },
     async handle(handlerInput) {
         const speakOutput = 'Bienvenido a tu traductor!';
-        const translateOutput = await translate(speakOutput,'es','en')
-
-        const speakOutputTranslated = translateOutput.TranslatedText;
-        console.log("Translated: " + speakOutputTranslated);
         return handlerInput.responseBuilder
-            .speak(speakOutputTranslated)
-            .reprompt(speakOutputTranslated)
+            .speak(speakOutput)
+            .reprompt(speakOutput)
             .getResponse();
     }
 };
@@ -48,8 +44,6 @@ const TranslateIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'TranslateIntent';
     },
     async handle(handlerInput) {
-        const speakOutput = 'Hello World!';
-        console.log("REQUEST:" + JSON.stringify(handlerInput));
         let translateOutput;
         if(handlerInput.requestEnvelope.request.intent.slots.toTranslate) {
             let textToTranslate = handlerInput.requestEnvelope.request.intent.slots.toTranslate.value;
